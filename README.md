@@ -5,7 +5,7 @@ TL_Control: Trajectory and Language Control for Human Motion Synthesis
 	<h2>Abstract</h2><br>
 	<div class="row" style="margin-bottom:10px">
 		<div class="col" style="text-align:center">
-			<img class="thumbnail" src="figs/TLControl_Teaser.png" style="width:90%; margin-bottom:20px">
+			<img class="thumbnail" src="assets/TLControl_Teaser.png" style="width:90%; margin-bottom:20px">
 		</div>
 
 </div>
@@ -17,35 +17,35 @@ TL_Control: Trajectory and Language Control for Human Motion Synthesis
 	<h2>Qualitative Results</h2>
 	<center>
 		<video width="435" height="245" controls autoplay loop muted>
-		    <source src="./TLControl_tinyVideos/part_First.mp4" type="video/mp4">
+		    <source src="assets/part_First.mp4" type="video/mp4">
 		    HTML5 video not supported
 		</video>
 		<video width="435" height="245"controls autoplay loop muted>
-		    <source src="./TLControl_tinyVideos/part2.mp4" type="video/mp4">
+		    <source src="assets/part2.mp4" type="video/mp4">
 		    HTML5 video not supported
 		</video>
 		<video width="435" height="245" controls autoplay loop muted>
-		    <source src="./TLControl_tinyVideos/part3.mp4" type="video/mp4">
+		    <source src="assets/part3.mp4" type="video/mp4">
 		    HTML5 video not supported
 		</video>
 		<video width="435" height="245" controls autoplay loop muted>
-		    <source src="./TLControl_tinyVideos/part4.mp4" type="video/mp4">
+		    <source src="assets/part4.mp4" type="video/mp4">
 		    HTML5 video not supported
 		</video>
 		<video width="435" height="245"  controls autoplay loop muted>
-		    <source src="./TLControl_tinyVideos/part14.mp4" type="video/mp4">
+		    <source src="assets/part14.mp4" type="video/mp4">
 		    HTML5 video not supported
 		</video>
 		<video width="435" height="245"  controls autoplay loop muted>
-		    <source src="./TLControl_tinyVideos/part15.mp4" type="video/mp4">
+		    <source src="assets/part15.mp4" type="video/mp4">
 		    HTML5 video not supported
 		</video>
 		<video width="435" height="245"  controls autoplay loop muted>
-		    <source src="./TLControl_tinyVideos/part16.mp4" type="video/mp4">
+		    <source src="assets/part16.mp4" type="video/mp4">
 		    HTML5 video not supported
 		</video>
 		<video width="435" height="245" controls autoplay loop muted>
-		    <source src="./TLControl_tinyVideos/smile_face_clip.mp4" type="video/mp4">
+		    <source src="assets/smile_face_clip.mp4" type="video/mp4">
 		    HTML5 video not supported
 		</video>
 
@@ -56,27 +56,27 @@ TL_Control: Trajectory and Language Control for Human Motion Synthesis
 	<h2>Qualitative Comparision Results</h2>
 	<center>
 		<video width="800" height="450" controls autoplay loop muted>
-		    <source src="./TLControl_tinyVideos/newJump.mp4" type="video/mp4">
+		    <source src="assets/newJump.mp4" type="video/mp4">
 		    HTML5 video not supported
 		</video>
 		<video width="800" height="450" controls autoplay loop muted>
-		    <source src="./TLControl_tinyVideos/part6.mp4" type="video/mp4">
+		    <source src="assets/part6.mp4" type="video/mp4">
 		    HTML5 video not supported
 		</video>
 		<video width="800" height="450" controls autoplay loop muted>
-		    <source src="./TLControl_tinyVideos/part9.mp4" type="video/mp4">
+		    <source src="assets/part9.mp4" type="video/mp4">
 		    HTML5 video not supported
 		</video>
 		<video width="800" height="450" controls autoplay loop muted>
-		    <source src="./TLControl_tinyVideos/part11.mp4" type="video/mp4">
+		    <source src="assets/part11.mp4" type="video/mp4">
 		    HTML5 video not supported
 		</video>
 		<video width="800" height="450" controls autoplay loop muted>
-		    <source src="./TLControl_tinyVideos/part12.mp4" type="video/mp4">
+		    <source src="assets/part12.mp4" type="video/mp4">
 		    HTML5 video not supported
 		</video>
 		<video width="800" height="450" controls autoplay loop muted>
-		    <source src="./TLControl_tinyVideos/part13.mp4" type="video/mp4">
+		    <source src="assets/part13.mp4" type="video/mp4">
 		    HTML5 video not supported
 		</video>
 
