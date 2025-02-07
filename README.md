@@ -1,13 +1,6 @@
 # TLControl
 TL_Control: Trajectory and Language Control for Human Motion Synthesis
 
-<div class="section abstract">
-	<h2>Abstract</h2><br>
-	<div class="row" style="margin-bottom:10px">
-		<div class="col" style="text-align:center">
-			<img class="thumbnail" src="assets/TLControl_Teaser.png" style="width:90%; margin-bottom:20px">
-		</div>
-
 ## Abstract
 ![TLControl Teaser](assets/TLControl_Teaser.png)
 
@@ -35,7 +28,7 @@ sudo apt-get install libgl1-mesa-glx libglu1-mesa freeglut3-dev libglib2.0-dev l
 - **Masked-Trajectory Transformer Weights:** Download from [Google Drive](https://drive.google.com/drive/folders/1YXW33VmX9_QVoKxOl4xkUX4rVhFGVvYc?usp=sharing) and place the file in:  
   `./save_weights/`
   
-- **VQ-VAE Pre-trained Weights:** Download from [Google Drive](https://drive.google.com/file/d/1wnHB41x83FmM7MNBmVhE18X6o-VTm2PP/view?usp=sharing) and place the file in:  
+- **VQ-VAE Pre-trained Weights:** Download from [Google Drive](https://drive.google.com/drive/folders/1DX1CxGDLYzVblMJaAV81TNXOeRr7m9LE?usp=sharing) and place the file in:  
   `./save_weights_vq/`
 
 ### 4. Run the Demo  
