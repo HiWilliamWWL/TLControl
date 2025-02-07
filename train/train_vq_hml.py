@@ -21,13 +21,12 @@ def update_lr_warm_up(optimizer, nb_iter, warm_up_iter, lr):
     return optimizer, current_lr
 
 device = torch.device('cuda')
-##### ---- Exp dirs ---- #####
 args = util.parser_util.mtm_args()
 torch.manual_seed(args.seed)
 
 
 
-##### ---- Dataloader ---- #####
+
 data = get_dataset_loader(name="humanml", batch_size=args.batch_size, num_frames=196, split="train")
 
 ##### ---- Network ---- #####
@@ -41,7 +40,6 @@ if len(args.resume_pth) > 0 :
     ckpt = torch.load(args.resume_pth, map_location='cpu')
     net.load_state_dict(ckpt['net'], strict=True)
 net.train()
-#net.cuda()
 net.to(device)
 
 ##### ---- Optimizer & Scheduler ---- #####
@@ -50,7 +48,6 @@ optimizer = optim.AdamW(net.parameters(), lr = args.lr, betas=(0.9, 0.99), weigh
 #scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=args.lr_scheduler, gamma=args.gamma)
 
 
-##### ------ warm-up ------- #####
 avg_recons, avg_perplexity, avg_commit = 0., 0., 0.
 
 num_epochs = 1000
@@ -69,7 +66,7 @@ for nb_iter in range(1, num_epochs + 1):
         motion = motion.cuda()
     
         pred_motion, loss_commit, perplexity = net(motion)
-        loss_motion = F.mse_loss(pred_motion, motion)
+        loss_motion = F.mse_loss(pred_motion, motion) #
         loss = loss_motion + args.commit * loss_commit
         
         loss.backward()
@@ -86,7 +83,7 @@ for nb_iter in range(1, num_epochs + 1):
     print(f"Train. Iter {nb_iter} : \t Commit. {avg_commit:.5f} \t PPL. {avg_perplexity:.2f} \t Recons.  {avg_recons:.5f}")
     
     if nb_iter % num_print_iter ==  0 :
-        print("Check if saave...?")
+        print("Check if save...?")
         if avg_recons < min_reconError:
             save(net.state_dict(), f"./save_weights_vq/best_model_epoch_hml_{avg_recons}AVG.pth")
             print("----saved----")

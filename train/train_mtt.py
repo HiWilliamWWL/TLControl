@@ -127,8 +127,7 @@ for epoch in range(num_epochs):  # Loop over the dataset multiple times
         traj_info = traj_info.to(device) 
         #x_joint = x_joint.to(device)
         
-        joint_mask = 5
-        x_traj_masked = random_mask_seq_update(traj_info, mask_rates[mask_index], joint_mask = joint_mask)
+        x_traj_masked = random_mask_seq_update(traj_info, mask_rates[mask_index])
         
         _, pre_codes = transformer_traj_model(x_traj_masked.to(device), cond['y']['text'])
         
