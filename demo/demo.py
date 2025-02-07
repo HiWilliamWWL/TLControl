@@ -9,7 +9,6 @@ from data_loaders.humanml.scripts.motion_process import recover_from_ric
 from models.Transformer_Traj_Model_hml import TransformerAutoencoder_withCodes_hml_G2_Traj
 import numpy as np
 import util.traj_funcs as traj_funcs
-import pickle
 
 
 def hardCode_inv_transform_traj(data):
@@ -38,22 +37,6 @@ def create_fix_traj_in_vis(waypoints, L = 196):
     waypoints = waypoints.unsqueeze(0)
     waypoints = waypoints.repeat((L, 1, 1))
     return waypoints
-
-def save_info_to_file(traj, text, filename='saved_data.pkl'):
-    # Convert traj to a numpy array if it's not already one
-    traj_array = traj.cpu().numpy() if not isinstance(traj, np.ndarray) else traj
-
-    # Create a dictionary to store both the trajectory and the text
-    data_to_save = {
-        'trajectory': traj_array,
-        'text': text
-    }
-
-    # Open the file in binary write mode and use pickle to serialize the data
-    with open(filename, 'wb') as file:
-        pickle.dump(data_to_save, file)
-
-    print(f"Data saved to {filename}")
 
 
 def correct_foot_skid(foot_loc):
@@ -84,14 +67,6 @@ def correct_foot_skid(foot_loc):
             corrected_foot_loc[t, [2, 3], :] = right_last_valid_loc
             corrected_foot_loc[t, [2, 3], 2] = .0 
     return corrected_foot_loc
-
-
-def save_motion_state(motion_state, filename='saved_data.pkl'):
-    # Convert traj to a numpy array if it's not already one
-    with open(filename, 'wb') as file:
-        pickle.dump(motion_state, file)
-
-    print(f"Sate File saved to {filename}")
 
 def latent_fit(optimizer, smpl, source_kpts_model, static_vars, vp_model, extra_params={}, on_step=None, gstep=0, motionLen = 196, control_joints = [0], motion_traj_mask = None):
 
@@ -140,29 +115,6 @@ def latent_fit(optimizer, smpl, source_kpts_model, static_vars, vp_model, extra_
     fit.final_loss = None
     fit.free_vars = {}
     return fit
-
-
-def save_as_ply(points, filename):
-    """
-    Save the 3D points from a numpy array to a PLY file.
-
-    Parameters:
-    - points: numpy array of shape (N*T, 3) containing the 3D points.
-    - filename: string, the name of the file to save the points to.
-    """
-    header = """ply
-    format ascii 1.0
-    element vertex {0}
-    property float x
-    property float y
-    property float z
-    end_header
-    """.format(len(points))
-        
-    with open(filename, "w") as file:
-        file.write(header)
-        for point in points:
-            file.write("{0} {1} {2}\n".format(point[0], point[1], point[2]))
 
 
 def process(args, control_Joints, text_prompt, video_Length = 100):
